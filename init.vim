@@ -4,31 +4,33 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=/Users/Jordan/.vim/bundle/repos/github.com/Shougo/dein.vim
+set runtimepath+=~/.vim/bundle/repos/github.com/Shougo/dein.vim
 
 " Required:
-call dein#begin('/Users/Jordan/.vim/bundle')
+call dein#begin('~/.vim/bundle')
 
 " Let dein manage dein
 " Required:
 call dein#add('Shougo/dein.vim')
 
 " MY PLUGINS
-call dein#add('Shougo/deoplete.nvim')                  " Autocompletion
-call dein#add('kien/ctrlp.vim')                        " Fuzzy Search
-call dein#add('tpope/vim-fugitive')                    " Git wrapper
-call dein#add('bling/vim-airline')                     " Status bar
-call dein#add('joguSD/vim-airline-themes')             " Status bar themes
-call dein#add('rust-lang/rust.vim', {'on_ft': 'rust'}) " Rust support
+call dein#add('Shougo/deoplete.nvim')                       " Autocompletion
+call dein#add('kien/ctrlp.vim')                             " Fuzzy Search
+call dein#add('tpope/vim-fugitive')                         " Git wrapper
+call dein#add('bling/vim-airline')                          " Status bar
+call dein#add('joguSD/vim-airline-themes')                  " Status bar themes
+call dein#add('eagletmt/neco-ghc', {'on_ft': 'haskell'})    " Haskell complete
+call dein#add('rust-lang/rust.vim', {'on_ft': 'rust'})      " Rust support
 call dein#add('sebastianmarkow/deoplete-rust',
-            \ {'on_ft': 'rust'})                       " Rust autocompletion
+			\ {'on_ft': 'rust'})                            " Rust complete
+call dein#add('zchee/deoplete-jedi', {'on_ft': 'python'})   " Python complete
 call dein#add('ntpeters/vim-better-whitespace',
-            \ {'on_cmd': 'StripWhitespace'})           " Whitespace plugin
-call dein#add('godlygeek/tabular')                     " Tabularize text
-call dein#add('ervandew/supertab') 					   " Make tab do more
+			\ {'on_cmd': 'StripWhitespace'})                " Whitespace plugin
+call dein#add('godlygeek/tabular')                          " Tabularize text
+call dein#add('ervandew/supertab')                          " Make tab do more
 call dein#add('scrooloose/nerdtree',
-            \ {'on_cmd': 'NERDTreeToggle'})            " File browser
-call dein#add('mhinz/vim-startify') 				   " Start screen
+			\ {'on_cmd': 'NERDTreeToggle'})                 " File browser
+call dein#add('mhinz/vim-startify')                         " Start screen
 " DEIN INIT END -------------
 " Required:
 call dein#end()
@@ -46,7 +48,7 @@ let g:deoplete#sources#rust#racer_binary = '/Users/Jordan/.cargo/bin/racer'
 let g:deoplete#sources#rust#rust_source_path = '/Users/Jordan/rustc-1.11.0/src'
 " Reverse supertab scroll order
 let g:SuperTabDefaultCompletionType = "<c-n>"
-" Syntatic config
+" Syntastic config
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -110,6 +112,11 @@ set cin                " Enable C-style indenation
 set si                 " Enable smart indenation
 "Custom configurations
 colorscheme redplanet
+" Haskell completion detailed listings
+let g:necoghc_enable_detailed_browse = 1
+" Disable autocompletion max width
+let g:deoplete#max_abbr_width = 0
+let g:deoplete#max_menu_width = 0
 " Ignore files while auto completing
 set wildignore=*.o,*.bak,*.data,*.class
 "For diff mode auto resize vertical splits
