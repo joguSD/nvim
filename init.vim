@@ -44,8 +44,8 @@ if dein#check_install()
 endif
 " Deoplete for rust
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#sources#rust#racer_binary = '/Users/Jordan/.cargo/bin/racer'
-let g:deoplete#sources#rust#rust_source_path = '/Users/Jordan/rustc-1.11.0/src'
+let g:deoplete#sources#rust#racer_binary = $HOME . '/.cargo/bin/racer'
+let g:deoplete#sources#rust#rust_source_path = $HOME . '/rustc-1.11.0/src'
 " Reverse supertab scroll order
 let g:SuperTabDefaultCompletionType = "<c-n>"
 " Syntastic config
@@ -65,7 +65,8 @@ if &diff
     let g:airline#extensions#whitespace#enabled = 0
 endif
 "Python setup
-let g:python_host_prog = '/usr/bin/python'
+let g:python_host_prog  = $HOME . '/.pyenv/versions/nvim2/bin/python'
+let g:python3_host_prog = $HOME . '/.pyenv/versions/nvim3/bin/python'
 " General configuration
 syntax on              " Syntax Highlighting on
 set timeoutlen=1000    " Reduce timout to be more responsive
