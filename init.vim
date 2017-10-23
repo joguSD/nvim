@@ -20,7 +20,7 @@ if dein#load_state('~/.vim/bundle')
     call dein#add('airblade/vim-gitgutter')         " git gutter
     call dein#add('sheerun/vim-polyglot')           " highlight everything
     call dein#add('davidhalter/jedi-vim',
-                \ {'on_ft': 'Python'})              " python completion
+                \ {'on_ft': 'python'})              " python completion
     call dein#add('ntpeters/vim-better-whitespace',
                 \ {'on_cmd': 'StripWhitespace'})    " Whitespace plugin
 
