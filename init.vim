@@ -20,8 +20,8 @@ if dein#load_state('~/.vim/bundle')
     call dein#add('tpope/vim-rhubarb')              " Gbrowse dep
     call dein#add('airblade/vim-gitgutter')         " git gutter
     call dein#add('sheerun/vim-polyglot')           " highlight everything
-    call dein#add('davidhalter/jedi-vim',
-                \ {'on_ft': 'python'})              " python completion
+    call dein#add('Shougo/deoplete.nvim')           " autocompetion
+    call dein#add('zchee/deoplete-jedi', {'on_ft': 'python'})
     call dein#add('ntpeters/vim-better-whitespace',
                 \ {'on_cmd': 'StripWhitespace'})    " Whitespace plugin
 
@@ -34,11 +34,10 @@ if dein#check_install()
     call dein#install()
 endif
 " end dein
+let g:deoplete#enable_at_startup = 1
 let mapleader=","
 " Reverse supertab scroll order
 let g:SuperTabDefaultCompletionType = "<c-n>"
-let g:SuperTabDefaultCompletionType = "context"
-let g:SuperTabClosePreviewOnPopupClose = 1
 " use ag
 if executable('rg')
     let g:ctrlp_user_command = 'rg --files %s'
