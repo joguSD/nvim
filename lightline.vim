@@ -49,9 +49,10 @@ function! LightlineLinterOK() abort
     return l:counts.total == 0 ? '✓ ' : ''
 endfunction
 
+" Update lightline when ALE lints
 autocmd User ALELint call s:MaybeUpdateLightline()
 
-" Update and show lightline but only if it's visible (e.g., not in Goyo)
+" Only update lightline if it's visible
 function! s:MaybeUpdateLightline()
     if exists('#lightline')
         call lightline#update()
