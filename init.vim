@@ -13,6 +13,7 @@ if dein#load_state('~/.vim/bundle')
     call dein#add('Shougo/dein.vim')                " plugin manager
     call dein#add('ervandew/supertab')              " make tab do more
     call dein#add('mileszs/ack.vim')                " ag search
+    call dein#add('kien/ctrlp.vim')                 " file search
     call dein#add('w0rp/ale')                       " async linting
     call dein#add('itchyny/lightline.vim')          " statusbar
     call dein#add('tpope/vim-fugitive')             " git integration
@@ -39,7 +40,13 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabClosePreviewOnPopupClose = 1
 " use ag
-let g:ackprg = 'ag --vimgrep'
+if executable('rg')
+    let g:ctrlp_user_command = 'rg --files %s'
+    let g:ctrlp_use_caching = 0
+    let g:ctrlp_working_path_mode = 'ra'
+    let g:ctrlp_switch_buffer = 'et'
+    let g:ackprg = 'rg --vimgrep --no-heading'
+endif
 let g:ale_sign_error = '✗'
 let g:ale_sign_warning = '▲'
 let g:ale_sign_column_always = 1
