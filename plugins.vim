@@ -19,6 +19,7 @@ if dein#load_state('~/.vim/bundle')
     call dein#add('sheerun/vim-polyglot')           " highlight everything
     call dein#add('Shougo/deoplete.nvim')           " autocompetion
     call dein#add('zchee/deoplete-jedi', {'on_ft': 'python'})
+    call dein#add('davidhalter/jedi-vim', {'on_ft': 'python'})
     call dein#add('ntpeters/vim-better-whitespace',
                 \ {'on_cmd': 'StripWhitespace'})    " Whitespace plugin
 
@@ -36,6 +37,8 @@ endif
 
 " Use deoplete on startup for completion
 let g:deoplete#enable_at_startup = 1
+" Disable jedi autocompletion
+let g:jedi#completions_enabled = 0
 
 " Reverse supertab scroll order
 let g:SuperTabDefaultCompletionType = "<c-n>"
