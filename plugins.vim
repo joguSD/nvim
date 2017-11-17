@@ -8,6 +8,7 @@ if dein#load_state('~/.vim/bundle')
     call dein#begin('~/.vim/bundle')
 
     call dein#add('Shougo/dein.vim')                " plugin manager
+    call dein#add('christoomey/vim-tmux-navigator') " plugin manager
     call dein#add('ervandew/supertab')              " make tab do more
     call dein#add('mileszs/ack.vim')                " ag search
     call dein#add('kien/ctrlp.vim')                 " file search
@@ -59,3 +60,6 @@ let g:ale_sign_column_always = 1
 
 " Lightline config
 runtime lightline.vim
+
+" Write all buffers before navigating from Vim to tmux pane
+let g:tmux_navigator_save_on_switch = 2
