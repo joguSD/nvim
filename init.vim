@@ -11,7 +11,6 @@ filetype plugin indent on
 syntax enable
 colorscheme redplanet
 set backspace=2
-set mouse=a            " mouse mode
 set noeb vb t_vb=      " Fix scroll freezing
 set shiftwidth=4       " Indent 4 instead of 8
 set tabstop=4          " Tab stop is 4 instead of 8
