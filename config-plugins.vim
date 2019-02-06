@@ -1,7 +1,5 @@
 " Use deoplete on startup for completion
 let g:deoplete#enable_at_startup = 1
-" Disable jedi autocompletion
-let g:jedi#completions_enabled = 0
 
 " Reverse supertab scroll order
 let g:SuperTabDefaultCompletionType = "<c-n>"
@@ -19,6 +17,10 @@ endif
 let g:ale_sign_error = '✗'
 let g:ale_sign_warning = '▲'
 let g:ale_sign_column_always = 1
+let g:ale_virtualenv_dir_names = []
+let g:ale_linters = {
+\ 'python': ['flake8']
+\ }
 
 " Lightline config
 runtime lightline.vim

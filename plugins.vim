@@ -1,38 +1,23 @@
-" Dein setup
-if &compatible
-    set nocompatible
-endif
-set runtimepath+=~/.vim/bundle/repos/github.com/Shougo/dein.vim
+" Specify a directory for plugins
+" - For Neovim: ~/.local/share/nvim/plugged
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.local/share/nvim/plugged')
 
-if dein#load_state('~/.vim/bundle')
-    call dein#begin('~/.vim/bundle')
+Plug 'christoomey/vim-tmux-navigator' " Tmux navigation integration
+Plug 'ervandew/supertab'              " make tab do more
+Plug 'mileszs/ack.vim'                " ag search
+Plug 'kien/ctrlp.vim'                 " file search
+Plug 'w0rp/ale'                       " async linting
+Plug 'itchyny/lightline.vim'          " statusbar
+Plug 'maximbaz/lightline-ale'         " Ale integration for lightline
+Plug 'tpope/vim-fugitive'             " git integration
+Plug 'tpope/vim-rhubarb'              " Gbrowse dep
+Plug 'airblade/vim-gitgutter'         " git gutter
+Plug 'sheerun/vim-polyglot'           " highlight everything
+Plug 'Shougo/deoplete.nvim'           " autocompetion
+Plug 'zchee/deoplete-jedi', {'on_ft': 'python'}
+Plug 'ntpeters/vim-better-whitespace',
+            \ {'on_cmd': 'StripWhitespace'}    " Whitespace plugin
 
-    call dein#add('Shougo/dein.vim')                " plugin manager
-    call dein#add('christoomey/vim-tmux-navigator') " plugin manager
-    call dein#add('ervandew/supertab')              " make tab do more
-    call dein#add('mileszs/ack.vim')                " ag search
-    call dein#add('kien/ctrlp.vim')                 " file search
-    call dein#add('w0rp/ale')                       " async linting
-    call dein#add('itchyny/lightline.vim')          " statusbar
-    call dein#add('tpope/vim-fugitive')             " git integration
-    call dein#add('tpope/vim-rhubarb')              " Gbrowse dep
-    call dein#add('airblade/vim-gitgutter')         " git gutter
-    call dein#add('sheerun/vim-polyglot')           " highlight everything
-    call dein#add('Shougo/deoplete.nvim')           " autocompetion
-    call dein#add('zchee/deoplete-jedi', {'on_ft': 'python'})
-    call dein#add('davidhalter/jedi-vim', {'on_ft': 'python'})
-    call dein#add('ntpeters/vim-better-whitespace',
-                \ {'on_cmd': 'StripWhitespace'})    " Whitespace plugin
-
-
-    call dein#end()
-    call dein#save_state()
-endif
-
-" Auto update plugins if needed
-if dein#check_install()
-    call dein#install()
-endif
-
-" Plugin configurations
-runtime plugins-config.vim
+" Initialize plugin system
+call plug#end()

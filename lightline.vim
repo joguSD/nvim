@@ -10,51 +10,28 @@ let g:lightline = {
 \        ['lineinfo'],
 \        ['percent'],
 \        ['fileformat', 'fileencoding', 'filetype'],
-\        ['linter_warnings', 'linter_errors', 'linter_ok']
+\        ['linter_checking', 'linter_warnings', 'linter_errors', 'linter_ok']
 \    ]
 \ },
 \ 'component_function': {
 \    'gitbranch': 'fugitive#head'
 \ },
 \ 'component_expand': {
-\    'linter_warnings': 'LightlineLinterWarnings',
-\    'linter_errors': 'LightlineLinterErrors',
-\    'linter_ok': 'LightlineLinterOK',
+\    'linter_checking': 'lightline#ale#checking',
+\    'linter_warnings': 'lightline#ale#warnings',
+\    'linter_errors': 'lightline#ale#errors',
+\    'linter_ok': 'lightline#ale#ok',
 \ },
 \ 'component_type': {
-\    'readonly': 'error',
 \    'linter_warnings': 'warning',
-\    'linter_errors': 'error'
+\    'linter_errors': 'error',
+\    'linter_ok': 'ok',
+\    'readonly': 'error',
 \ },
 \}
 
-function! LightlineLinterWarnings() abort
-    let l:counts = ale#statusline#Count(bufnr(''))
-    let l:all_errors = l:counts.error + l:counts.style_error
-    let l:all_non_errors = l:counts.total - l:all_errors
-    return l:counts.total == 0 ? '' : printf('%d ▲', all_non_errors)
-endfunction
+let g:lightline#ale#indicator_checking = '...'
+let g:lightline#ale#indicator_warnings = '▲ '
+let g:lightline#ale#indicator_errors = '✗ '
+let g:lightline#ale#indicator_ok = '✓'
 
-function! LightlineLinterErrors() abort
-    let l:counts = ale#statusline#Count(bufnr(''))
-    let l:all_errors = l:counts.error + l:counts.style_error
-    let l:all_non_errors = l:counts.total - l:all_errors
-    return l:counts.total == 0 ? '' : printf('%d ✗', all_errors)
-endfunction
-
-function! LightlineLinterOK() abort
-    let l:counts = ale#statusline#Count(bufnr(''))
-    let l:all_errors = l:counts.error + l:counts.style_error
-    let l:all_non_errors = l:counts.total - l:all_errors
-    return l:counts.total == 0 ? '✓ ' : ''
-endfunction
-
-" Update lightline when ALE lints
-autocmd User ALELint call s:MaybeUpdateLightline()
-
-" Only update lightline if it's visible
-function! s:MaybeUpdateLightline()
-    if exists('#lightline')
-        call lightline#update()
-    end
-endfunction
