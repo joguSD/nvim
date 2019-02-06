@@ -14,8 +14,8 @@ Plug 'tpope/vim-fugitive'             " git integration
 Plug 'tpope/vim-rhubarb'              " Gbrowse dep
 Plug 'airblade/vim-gitgutter'         " git gutter
 Plug 'sheerun/vim-polyglot'           " highlight everything
-Plug 'Shougo/deoplete.nvim'           " autocompetion
-Plug 'zchee/deoplete-jedi', {'on_ft': 'python'}
+"Plug 'Shougo/deoplete.nvim'           " autocompetion
+"Plug 'zchee/deoplete-jedi', {'on_ft': 'python'}
 Plug 'ntpeters/vim-better-whitespace',
             \ {'on_cmd': 'StripWhitespace'}    " Whitespace plugin
 

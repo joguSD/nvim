@@ -14,13 +14,15 @@ if executable('rg')
 endif
 
 " ALE linting config
+let g:ale_completion_enabled = 1
 let g:ale_sign_error = '✗'
 let g:ale_sign_warning = '▲'
 let g:ale_sign_column_always = 1
 let g:ale_virtualenv_dir_names = []
 let g:ale_linters = {
-\ 'python': ['flake8']
+\ 'python': ['pyls']
 \ }
+highlight clear ALEWarning
 
 " Lightline config
 runtime lightline.vim

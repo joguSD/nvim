@@ -3,8 +3,8 @@ let g:python_host_prog  = $HOME . '/.pyenv/versions/nvim2/bin/python'
 let g:python3_host_prog = $HOME . '/.pyenv/versions/nvim3/bin/python'
 
 " Load plugin manager and plugins
-runtime plugins.vim
 runtime config-plugins.vim
+runtime plugins.vim
 
 " Core vim customizations
 let mapleader=","
