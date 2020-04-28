@@ -1,9 +1,3 @@
-" Use deoplete on startup for completion
-let g:deoplete#enable_at_startup = 1
-
-" Reverse supertab scroll order
-let g:SuperTabDefaultCompletionType = "<c-n>"
-
 " Use ripgrep for filename and content searching
 if executable('rg')
     let g:ctrlp_user_command = 'rg --files %s'
@@ -13,19 +7,23 @@ if executable('rg')
     let g:ackprg = 'rg --vimgrep --no-heading'
 endif
 
-" ALE linting config
-"let g:ale_completion_enabled = 1
-let g:ale_sign_error = '✗'
-let g:ale_sign_warning = '▲'
-let g:ale_sign_column_always = 1
-let g:ale_virtualenv_dir_names = []
-let g:ale_linters = {
-\ 'python': ['pyls']
-\ }
-highlight clear ALEWarning
-
 " Lightline config
 runtime lightline.vim
 
 " Write all buffers before navigating from Vim to tmux pane
 let g:tmux_navigator_save_on_switch = 2
+
+
+" LSC configuration
+" TODO: rust-analyzer
+let g:lsc_server_commands = {
+ \  'python': {
+ \    'command': 'pyls',
+ \    'log_level': -1,
+ \    'suppress_stderr': v:true,
+ \  }
+ \}
+let g:lsc_auto_map = v:true
+let g:lsc_enable_diagnostics = v:false
+" IDK what all this does but it was suggested
+set completeopt=menu,menuone,noinsert,noselect

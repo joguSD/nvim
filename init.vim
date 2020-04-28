@@ -1,6 +1,6 @@
 " Set python paths to setup virtual-envs
-let g:python_host_prog  = $HOME . '/.pyenv/versions/nvim2/bin/python'
-let g:python3_host_prog = $HOME . '/.pyenv/versions/nvim3/bin/python'
+let g:python_host_prog  = $HOME . '/.venvs/nvim2/bin/python'
+let g:python3_host_prog = $HOME . '/.venvs/nvim3/bin/python'
 
 " Load plugin manager and plugins
 runtime config-plugins.vim
@@ -16,6 +16,7 @@ set noeb vb t_vb=      " Fix scroll freezing
 set shiftwidth=4       " Indent 4 instead of 8
 set tabstop=4          " Tab stop is 4 instead of 8
 set expandtab          " Tabs are extended into spaces
+set nofoldenable       " disable folding
 set number
 set list
 set completeopt-=preview
