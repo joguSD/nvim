@@ -13,23 +13,23 @@ return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
 
   use 'christoomey/vim-tmux-navigator' -- Tmux navigation integration
-  use 'mileszs/ack.vim'                -- rg search
-  use 'kien/ctrlp.vim'                 -- file search
   use 'itchyny/lightline.vim'          -- statusbar
   use 'tpope/vim-fugitive'             -- git integration
   use 'tpope/vim-rhubarb'              -- Gbrowse dep
-  -- use 'airblade/vim-gitgutter'         -- git gutter
-  use {
-      'lewis6991/gitsigns.nvim',
-      requires = {
-          'nvim-lua/plenary.nvim'
-      }
-  }
   use 'sheerun/vim-polyglot'           -- highlight everything
   use {'ntpeters/vim-better-whitespace', cmd = 'StripWhitespace'}
-  use 'arcticicestudio/nord-vim'
 
   -- 0.5.0 nightly stuff
   use 'neovim/nvim-lspconfig'
-  use 'hrsh7th/nvim-compe'
+  use 'nvim-treesitter/nvim-treesitter'
+  use 'hrsh7th/nvim-compe'             -- LSP Autocompletion
+  use 'kosayoda/nvim-lightbulb'        -- Show a lightbulb for lsp actions
+  -- Telescope
+  use 'nvim-lua/popup.nvim'
+  use 'nvim-lua/plenary.nvim'
+  use 'nvim-telescope/telescope.nvim'  -- Search plugin
+  -- Requires plenary
+  use 'lewis6991/gitsigns.nvim'
+  -- use 'arcticicestudio/nord-vim'       -- Nord colorscheme, no treesitter
+  use 'shaunsingh/nord.nvim'
 end)

@@ -23,6 +23,8 @@ opt('b', 'expandtab', true)   -- Tabs are extended into spaces
 opt('w', 'foldenable', false) -- disable folding
 opt('w', 'number', true)
 opt('w', 'list', true)
--- Fix Scroll freezing
-opt('o', 'errorbells', false)
-opt('o', 'visualbell', true)
+opt('w', 'signcolumn', 'yes') -- Always show sign column
+opt('o', 'errorbells', false) -- Fix Scroll freezing
+opt('o', 'visualbell', true)  -- Fix Scroll freezing
+opt('o', 'hlsearch', false)  -- Disable highlight after search
+opt('o', 'termguicolors', true)
