@@ -3,7 +3,6 @@ let g:python_host_prog  = $HOME . '/.venvs/nvim2/bin/python'
 let g:python3_host_prog = $HOME . '/.venvs/nvim3/bin/python'
 
 " Load plugin manager and plugins
-runtime config-plugins.vim
 runtime plugins.vim
 
 " Core vim customizations
@@ -21,4 +20,4 @@ set number
 set list
 set completeopt-=preview
 highlight ColorColumn ctermbg=magenta
-call matchadd('ColorColumn', '\%81v', 100)
+"call matchadd('ColorColumn', '\%81v', 100)
