@@ -12,5 +12,7 @@ require('lightline-config')
 require('compe-config')
 require('lsp-config')
 
+require('gitsigns').setup() -- Enable git gutter signs
+
 -- Write all buffers before navigating from Vim to tmux pane
 vim.g.tmux_navigator_save_on_switch = 2

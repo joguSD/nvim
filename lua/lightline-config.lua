@@ -1,6 +1,6 @@
 -- Lightline config
 vim.g.lightline = {
-    colorscheme = 'seoul256',
+    colorscheme = 'nord',
     active = {
         left = {
             {'mode', 'paste'},
