@@ -30,7 +30,6 @@ return require('packer').startup(function()
   use 'nvim-telescope/telescope.nvim'  -- Search plugin
   -- Requires plenary
   use 'lewis6991/gitsigns.nvim'
-  -- use 'arcticicestudio/nord-vim'       -- Nord colorscheme, no treesitter
-  use 'shaunsingh/nord.nvim'
+  use 'arcticicestudio/nord-vim'       -- Nord colorscheme, no treesitter
   use 'nvim-treesitter/playground'
 end)
