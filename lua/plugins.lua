@@ -32,4 +32,5 @@ return require('packer').startup(function()
   use 'lewis6991/gitsigns.nvim'
   -- use 'arcticicestudio/nord-vim'       -- Nord colorscheme, no treesitter
   use 'shaunsingh/nord.nvim'
+  use 'nvim-treesitter/playground'
 end)
