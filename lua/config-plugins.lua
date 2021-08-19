@@ -15,6 +15,7 @@ end
 require('lightline-config')
 require('compe-config')
 require('lsp-config')
+require('dap-config')
 
 require('gitsigns').setup() -- Enable git gutter signs
 

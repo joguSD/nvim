@@ -1,5 +1,5 @@
 -- Python language server
-require'lspconfig'.pyls.setup{}
+require'lspconfig'.pylsp.setup{}
 
 -- LSP Keybinds
 vim.api.nvim_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', { noremap = true, silent = true })
