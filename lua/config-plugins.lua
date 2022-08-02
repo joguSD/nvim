@@ -1,6 +1,6 @@
 -- Enable tree sitter
 local ts = require 'nvim-treesitter.configs'
-ts.setup {ensure_installed = 'maintained', highlight = {enable = true}}
+ts.setup {ensure_installed = { "python", "java" }, highlight = {enable = true}}
 
 -- Use ripgrep if available
 local has_rg = vim.api.nvim_eval('executable("rg")')
